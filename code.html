@@ -1,0 +1,389 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Королевский Кот | Руководство по Стичу</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fef8f1",
+                        "secondary-container": "#e7e2d9",
+                        "surface-container-low": "#f9f3ec",
+                        "secondary": "#615e57",
+                        "inverse-surface": "#32302c",
+                        "surface-container-high": "#ede7e0",
+                        "on-primary-fixed": "#301400",
+                        "surface-container": "#f3ede6",
+                        "on-secondary-container": "#67645d",
+                        "on-secondary-fixed-variant": "#494640",
+                        "primary": "#944a00",
+                        "surface-variant": "#e7e2db",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#82d3de",
+                        "on-secondary-fixed": "#1d1b16",
+                        "background": "#fef8f1",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#9ff0fb",
+                        "on-primary-container": "#502600",
+                        "on-primary-fixed-variant": "#713700",
+                        "surface-tint": "#944a00",
+                        "on-tertiary-fixed-variant": "#004f56",
+                        "primary-fixed": "#ffdcc5",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fef8f1",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e7e2db",
+                        "secondary-fixed": "#e7e2d9",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#564337",
+                        "primary-fixed-dim": "#ffb783",
+                        "on-tertiary-container": "#00373d",
+                        "inverse-on-surface": "#f6f0e9",
+                        "tertiary-container": "#53a5b0",
+                        "on-tertiary-fixed": "#001f23",
+                        "on-background": "#1d1b17",
+                        "inverse-primary": "#ffb783",
+                        "secondary-fixed-dim": "#cbc6bd",
+                        "primary-container": "#e67e22",
+                        "outline": "#897365",
+                        "surface-dim": "#dfd9d2",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dcc1b1",
+                        "on-surface": "#1d1b17",
+                        "tertiary": "#006972"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Noto Serif"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .paw-print-bg {
+            background-image: radial-gradient(#dcc1b1 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<!-- Layout Container -->
+<div class="max-w-7xl mx-auto flex pt-24 pb-12 px-4 gap-8">
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden lg:flex flex-col w-64 py-6 rounded-r-3xl h-[819px] top-24 sticky bg-orange-50/90 dark:bg-stone-800/90 backdrop-blur-xl shadow-[0_20px_40px_rgba(80,38,0,0.06)]">
+<div class="px-6 mb-8">
+<h2 class="text-xl font-bold text-orange-800 font-headline" style="">Инструкция</h2>
+<p class="uppercase tracking-widest text-xs font-headline text-stone-500" style="">Гид по эксплуатации</p>
+</div>
+<nav class="flex flex-col">
+<a class="text-stone-500 dark:text-stone-400 mx-2 my-1 px-4 py-3 flex items-center gap-3 font-headline hover:bg-orange-100 dark:hover:bg-stone-700 rounded-full transition-all" href="#feeding" style="">
+<span class="material-symbols-outlined" style="">restaurant</span> Питание
+            </a>
+<a class="text-stone-500 dark:text-stone-400 mx-2 my-1 px-4 py-3 flex items-center gap-3 font-headline hover:bg-orange-100 dark:hover:bg-stone-700 rounded-full transition-all" href="#water" style="">
+<span class="material-symbols-outlined" style="">water_drop</span> Вода
+            </a>
+<a class="text-stone-500 dark:text-stone-400 mx-2 my-1 px-4 py-3 flex items-center gap-3 font-headline hover:bg-orange-100 dark:hover:bg-stone-700 rounded-full transition-all" href="#litter" style="">
+<span class="material-symbols-outlined" style="">pets</span> Туалет
+            </a>
+<a class="text-stone-500 dark:text-stone-400 mx-2 my-1 px-4 py-3 flex items-center gap-3 font-headline hover:bg-orange-100 dark:hover:bg-stone-700 rounded-full transition-all" href="#playing" style="">
+<span class="material-symbols-outlined" style="">toys</span> Игры
+            </a>
+<a class="text-stone-500 dark:text-stone-400 mx-2 my-1 px-4 py-3 flex items-center gap-3 font-headline hover:bg-orange-100 dark:hover:bg-stone-700 rounded-full transition-all" href="#sleeping" style="">
+<span class="material-symbols-outlined" style="">bedtime</span> Сон
+            </a>
+<a class="bg-teal-100 dark:bg-teal-900/40 text-teal-900 dark:text-teal-100 rounded-full mx-2 my-1 px-4 py-3 flex items-center gap-3 font-headline" href="#health" style="">
+<span class="material-symbols-outlined" style="">medical_services</span> Здоровье
+            </a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 space-y-24">
+<!-- Hero Section -->
+<section class="relative group" id="hero">
+<div class="absolute -top-10 -left-10 w-32 h-32 opacity-10 rotate-12">
+<span class="material-symbols-outlined text-9xl text-primary" style="">pets</span>
+</div>
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2 aspect-square rounded-xl overflow-hidden shadow-xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500 bg-surface-container-highest relative">
+<img class="w-full h-full object-cover" data-alt="Majestic ginger and white cat sitting on a plush velvet cushion" src="https://i.ibb.co/JRkrvXZm/2026-05-04-23-37-03.png" style="">
+<div class="absolute bottom-6 left-6 bg-primary/90 backdrop-blur-md px-6 py-2 rounded-full text-on-primary font-headline font-bold" style="">
+                        Королевский портрет Стича
+                    </div>
+</div>
+<div class="w-full md:w-1/2 space-y-6">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-4 py-1 rounded-full text-sm font-bold font-label uppercase tracking-widest" style="">Хозяин квартиры</span>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline leading-tight text-on-primary-container" style=""><span class="text-primary italic" style="">Стич</span>
+</h1>
+<p class="text-xl text-on-surface-variant font-body italic leading-relaxed" style="">Этот вьетнамский дворянин требует пристального внимания. Мастер побегов через входную дверь. Заластит и замурлыкает любого. Прекрасно откликается на свое имя. В его власти вся квартира, и даже есть свой шкафчик в коридоре</p>
+<div class="flex gap-4">
+<a class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-headline font-bold shadow-lg hover:scale-105 transition-transform" href="#health" style="">#мурлыкало</a>
+<a class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold hover:bg-surface-container-high transition-colors" href="#feeding" style="">#жопапушистая</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: General Info -->
+<section class="bg-surface-container-low rounded-xl p-12 space-y-12 relative overflow-hidden" id="general">
+<div class="paw-print-bg absolute inset-0"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="col-span-1 space-y-4">
+<h2 class="text-3xl font-headline font-bold text-on-primary-container" style="">Личность Короля</h2>
+<p class="text-on-surface-variant italic" style="">Этот «пробник тигра» кусается как черт, если хочет играть. Наглый, но ласковый.</p>
+</div>
+<div class="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-8 border-primary">
+<span class="material-symbols-outlined text-tertiary mb-4" style="">info</span>
+<h3 class="font-headline font-bold text-lg mb-2" style="">Характеристики</h3>
+<ul class="space-y-2 text-sm font-label text-on-surface">
+<li class="flex justify-between" style=""><span class="" style="">Имя:</span> <span class="font-bold" style="">Стич / Шнобель</span></li>
+<li class="flex justify-between" style=""><span class="" style="">Статус:</span> <span class="font-bold" style="">Вьетнамский дворянин</span></li>
+<li class="flex justify-between" style=""><span class="" style="">Возраст:</span> <span class="font-bold" style="">1.5 года</span></li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-8 border-tertiary">
+<span class="material-symbols-outlined text-tertiary mb-4" style="">volume_up</span>
+<h3 class="font-headline font-bold text-lg mb-2" style="">Словарь Мяуканья</h3>
+<p class="text-xs text-on-surface-variant mb-4" style="">Настойчивый мяв бывает в 4 случаях:</p>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-primary font-bold text-[10px]" style="">1</div>
+<p class="text-xs" style="">Хочет есть (всегда)</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center text-tertiary font-bold text-[10px]" style="">2</div>
+<p class="text-xs" style="">Хочет играть</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-primary font-bold text-[10px]" style="">3</div>
+<p class="text-xs" style="">Хочет буянить в подьезде</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center text-tertiary font-bold text-[10px]"  style="">4</div>
+<p class="text-xs" style="">Пододеяльник не расправлен</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-primary font-bold text-[10px]" style="">5</div>
+<p class="text-xs" style="">Идет в туалет</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Feeding Guide -->
+<section class="space-y-8" id="feeding">
+<div class="flex items-center gap-4">
+<div class="h-1 w-12 bg-primary"></div>
+<h2 class="text-3xl font-headline font-bold uppercase tracking-tight" style="">Королевская Трапеза</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-surface-container-highest rounded-xl p-8 relative overflow-hidden">
+<h3 class="text-2xl font-headline font-bold mb-6 flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-primary" style="">schedule</span> Меню дня
+                    </h3>
+<div class="space-y-4">
+<div class="bg-surface-container px-6 py-4 rounded-lg flex justify-between items-center">
+<div>
+<p class="font-headline font-bold text-primary" style="">09:00 - 11:00</p>
+<p class="text-sm font-body" style="">Влажный корм (1/2 пакетика)</p>
+</div>
+<span class="material-symbols-outlined text-outline" style="">check_circle</span>
+</div>
+<div class="bg-surface-container px-6 py-4 rounded-lg flex justify-between items-center">
+<div>
+<p class="font-headline font-bold text-primary" style="">21:00 - 23:00</p>
+<p class="text-sm font-body" style="">Влажный корм (вторая половина)</p>
+</div>
+<span class="material-symbols-outlined text-outline" style="">radio_button_unchecked</span>
+</div>
+</div>
+<div class="mt-8 space-y-4">
+<div class="p-4 bg-primary-fixed rounded-lg border-2 border-dashed border-primary">
+<h4 class="font-headline font-bold text-on-primary-fixed-variant flex items-center gap-2" style="">
+<span class="material-symbols-outlined" style="">warning</span> Команды</h4>
+<p class="text-sm italic text-on-primary-fixed mt-2" style="">Знает слово «нельзя» строгим тоном, пока накладываешь. Всегда делает вид, что он самый голодный кот на планете.</p>
+</div>
+<p class="text-sm font-body text-on-surface-variant bg-surface-container p-4 rounded-lg" style="">
+<b>Сухой корм:</b> автокормушка. Если очень просит — можно добавить немного камушков. Лучше не давать никакую человеческую еду, молоко. Но все просто нюхает, развивая кошачий ум</p>
+<p class="text-sm font-body text-on-surface-variant bg-surface-container p-4 rounded-lg mt-4" style=""><b>Вкусняшки:</b> продолговатые пакетики, можно по одному раз в несколько дней давать.</p></div>
+</div>
+<div class="rounded-xl overflow-hidden aspect-video lg:aspect-auto">
+<img class="w-full h-full object-cover" data-alt="Cat food bowls" src="https://i.ibb.co/S41HzH1T/2026-05-04-21-38-15.png" style="">
+</div>
+</div>
+</section>
+<!-- Section 3 & 4: Hydration & Litter -->
+<section class="grid grid-cols-1 md:grid-cols-5 gap-8">
+<div class="md:col-span-3 bg-surface-container-low rounded-xl p-8 space-y-6" id="water">
+<h2 class="text-2xl font-headline font-bold flex items-center gap-2 text-tertiary" style="">
+<span class="material-symbols-outlined" style="">water_drop</span> Источники влаги
+                </h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<p class="font-headline font-bold text-tertiary text-sm" style="">Кухня</p>
+<p class="text-xs font-body" style="">Фонтанчик (менять раз в неделю)</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<p class="font-headline font-bold text-tertiary text-sm" style="">Большая комната</p>
+<p class="text-xs font-body" style="">2 миски (менять раз в 2-3 дня, пьет чаще всего)</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<p class="font-headline font-bold text-tertiary text-sm" style="">Маленькая комната</p>
+<p class="text-xs font-body" style="">Миска (менять каждые 10 дней)</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface-container-high rounded-xl p-8 space-y-6 flex flex-col justify-between" id="litter">
+<div>
+<h2 class="text-2xl font-headline font-bold flex items-center gap-2" style="">
+<span class="material-symbols-outlined" style="">cleaning_services</span> Санитария
+                    </h2>
+<p class="mt-4 text-sm font-body" style="">Два лотка. В основном использует тот, что в маленьком туалете. Оба комкуются. В маленьком туалете писающие отходы складывать в ведро под раковиной, какающие отходы в унитаз. Примерно через 10 дней полностью заменить&nbsp;</p>
+</div>
+<div class="bg-error-container text-on-error-container p-4 rounded-lg text-xs italic font-bold" style="">
+                    «Триггер раковины»: Иногда писает в слив, если идешь в душ. Ему нравится, когда смотрят. Если случилось — пролей много воды.
+                </div>
+</div>
+</section>
+<!-- Section 5: Playtime -->
+<section class="space-y-8" id="playing">
+<div class="flex items-center gap-4">
+<h2 class="text-3xl font-headline font-bold uppercase tracking-tight" style="">Королевская Охота</h2>
+<div class="h-1 flex-1 bg-primary-container"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest border-b-8 border-orange-200 p-6 rounded-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" style="">flight</span>
+<h4 class="font-headline font-bold" style="">Удочки-дразнилки</h4>
+<p class="text-xs text-on-surface-variant mt-2 font-body italic" style="">Любит пинать их всеми лапами (представляет себя кенгуру). Перышки — для активного бега</p>
+</div>
+<div class="bg-surface-container-lowest border-b-8 border-teal-200 p-6 rounded-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4" style="">toys</span>
+<h4 class="font-headline font-bold" style="">Пассивные Игры</h4>
+<p class="text-xs text-on-surface-variant mt-2 font-body italic" style="">1. Одной рукой в телефоне, другой водим перышком. Плохо видит его на ковре в гостинной<br>2. Дразнилки: одна часть в ванной, другая где коврик. Дальше он сам разберется</p><div class="" style=""><br></div><p class="" style=""></p>
+</div>
+<div class="bg-surface-container-lowest border-b-8 border-orange-200 p-6 rounded-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" style="">circle</span>
+<h4 class="font-headline font-bold" style="">Шарик из шерсти</h4>
+<p class="text-xs text-on-surface-variant mt-2 font-body italic" style="">Только под присмотром — иногда хочет его съесть. Хранится в шкафчике.</p>
+</div>
+<div class="bg-surface-container-lowest border-b-8 border-teal-200 p-6 rounded-lg hover:scale-105 transition-transform"><span class="material-symbols-outlined text-tertiary text-4xl mb-4" style="">bathtub</span><h4 class="font-headline font-bold" style="">Любимое место для игрищ</h4><p class="text-xs text-on-surface-variant mt-2 font-body italic" style="">Большая ванна. Там может кувыркаться, беситься. Часто ловит дразнилки лапами из-под двери, когда сам лежит под раковиной.</p></div><div class="bg-primary text-on-primary p-6 rounded-xl shadow-lg flex flex-col justify-center sm:col-span-2 lg:col-span-4">
+<h4 class="font-headline font-black text-xl leading-tight" style=""><span style="font-family: &quot;Noto Serif&quot;; font-size: 14px; font-style: italic; font-weight: 400;">- Надевай толстую для тисканья в режиме игрищ (в его шкафчике)</span></h4>
+<p class="text-sm font-body italic mt-2" style="">- По желанию — прогулка на шлейке в подъезде, до 2 этажа можно выпускать просто так под присмотром</p>
+</div>
+</div>
+</section>
+<!-- Section 6: Favorite Spots -->
+<section class="bg-stone-900 text-stone-100 rounded-xl p-12 overflow-hidden relative" id="sleeping">
+<div class="absolute inset-0 opacity-20">
+<img class="w-full h-full object-cover grayscale" data-alt="Moody dark interior with a luxury cat tree" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMXcMop_ntWbEz9-GHKIt0R_lC5awaAtoCFE-Pmt3RhiJGp7As8eX_bCsLrThPH0RqB_psnNA3rYNC7FqtsfTccgd8mv0tLUcJniZHZxrdxtpVqoYjqYKjSVzPQnFGBHWY3mXsxWHBN13HZZxIgZwc8ltzMBB2nYOvE0lerKha1h7BLimO7AuVyrDnnRRRkCmUpFY1epauJE-IDAMOPBHb0pfLfe0ytP6CBc2d_l454xrAEMvJwUP69G23mBd1qkzYDc9R8rK9LP5W" style="">
+</div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<h2 class="text-4xl font-headline font-extrabold text-primary-fixed" style="">Карта Территории</h2>
+<p class="font-body text-stone-400 italic" style="">Где искать, если кот потерялся</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 border-b border-stone-800 pb-2">
+<span class="font-headline font-bold text-xl text-primary" style="">01</span>
+<div>
+<h4 class="font-headline font-bold" style="">Шкаф в большой комнате&nbsp;</h4>
+<p class="text-sm text-stone-500" style="">Прыгает со стола, поэтому на его углу лучше ничего ценного не держать. Если спит внутри шкафа — ставь распорку из желтых контейнеров, чтобы он выбрался оттуда</p>
+</div>
+</div>
+<div class="flex items-center gap-4 border-b border-stone-800 pb-2">
+<span class="font-headline font-bold text-xl text-primary" style="">02</span>
+<div>
+<h4 class="font-headline font-bold" style="">Чемоданный Приют</h4>
+<p class="text-sm text-stone-500" style="">На шкафу в маленькой комнате. Поправляй полотенце, иначе раздерет чемодан</p>
+</div>
+</div>
+<div class="flex items-center gap-4 border-b border-stone-800 pb-2">
+<span class="font-headline font-bold text-xl text-primary" style="">03</span>
+<div>
+<h4 class="font-headline font-bold" style="">Домик в кровати</h4>
+<p class="text-sm text-stone-500" style="">Пододеяльник, зафиксированный на подушке. Обожает спать внутри. И вообще под под одеялом&nbsp;в целом</p>
+</div>
+</div>
+<div class="flex items-center gap-4 border-b border-stone-800 pb-2"><span class="font-headline font-bold text-xl text-primary" style="">04</span><div><h4 class="font-headline font-bold" style="">Убежище</h4><p class="text-sm text-stone-500" style="">Пространство под раковиной в большом санузле или ящики там же (если боится или играется).</p></div></div></div>
+</div>
+<div class="flex items-center justify-center">
+<div class="w-64 h-64 border-4 border-primary/30 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-8xl text-primary-fixed-dim" style="">bedtime</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Health -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12" id="health">
+<div class="lg:col-span-2 space-y-6">
+<h2 class="text-3xl font-headline font-extrabold text-tertiary" style="">Здоровье</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-lg">
+<h4 class="font-headline font-bold text-on-surface mb-2" style="">Зубы</h4>
+<p class="text-sm font-body" style="">По возможности чистить зубы раз в неделю. Щетка на палец и паста в его шкафчике</p>
+<p class="text-xs text-on-surface-variant font-label mt-2" style="">ВАЖНАЯ РУТИНА</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg">
+<h4 class="font-headline font-bold text-on-surface mb-2" style="">Вес</h4>
+<p class="text-3xl font-headline font-black text-primary" style="">5 кг</p>
+<p class="text-xs text-on-surface-variant font-label mt-2 italic text-tertiary" style="">ВЬЕТНАМСКИЙ ДВОРЯНИН</p>
+</div>
+</div>
+</div>
+<!-- Emergency Card -->
+<div class="bg-gradient-to-br from-tertiary to-tertiary-container text-on-tertiary p-8 rounded-xl shadow-xl transform hover:-translate-y-2 transition-transform">
+<h3 class="text-2xl font-headline font-black flex items-center gap-2 mb-6" style="">
+<span class="material-symbols-outlined" style="">emergency</span> На всякий случай</h3>
+<div class="space-y-6">
+<div>
+<p class="text-xs uppercase font-label tracking-widest opacity-80" style="">Клиника</p>
+<p class="font-headline font-bold" style="">PAWS International Clinic</p>
+<p class="text-sm font-body opacity-90" style="">+84 339 325 563</p>
+</div>
+<div>
+<p class="text-xs uppercase font-label tracking-widest opacity-80" style="">Врач (ТГ)</p>
+<p class="font-headline font-bold" style="">Мария @pooipii</p>
+<p class="text-sm font-body opacity-90" style="">Очень срочные вопросы</p>
+</div>
+<div class="pt-4 border-t border-on-tertiary/20">
+<p class="text-xs font-body italic" style="">"В случае ЧП сначала покормите кота, потом звоните врачу."</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-orange-100 dark:bg-stone-950 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center text-center gap-6 max-w-7xl mx-auto">
+<span class="font-['Plus_Jakarta_Sans'] font-black text-orange-800 text-xl" style=""><br></span>
+<p class="font-['Noto_Serif'] text-sm italic text-stone-700 dark:text-stone-300" style="">
+            © 2026 Руководство по Стичу. Все права защищены.</p>
+<div class="flex gap-6">
+<a class="text-stone-700 dark:text-stone-300 hover:text-teal-600 transition-colors font-body text-sm underline decoration-orange-500" href="#" style="">Условия</a>
+<a class="text-stone-700 dark:text-stone-300 hover:text-teal-600 transition-colors font-body text-sm" href="#" style="">Приватность</a>
+<a class="text-stone-700 dark:text-stone-300 hover:text-teal-600 transition-colors font-body text-sm" href="#" style="">Портал</a>
+</div>
+</div>
+</footer>
+</body></html>
